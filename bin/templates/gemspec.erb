@@ -1,0 +1,23 @@
+Gem::Specification.new do |s|
+    s.name        = "<%= name %>"
+    s.version     = "<%= version %>"
+    s.date        = "<%= date %>"
+    s.summary     = "<%= summary %>"
+    s.description = "<%= summary %>"
+    s.author      = "<%= author %>"
+    s.email       = "<%= email %>"
+<% if files.empty? %>
+    s.files       = "" # TODO put some files here
+<% else %>
+    s.files       = <%= files.inspect %> # + Dir["bin/templates/*"]
+<% end %>
+<% if homepage != "" %>
+    s.homepage    = "<%= homepage %>"
+<% end %>
+<% unless executables.empty? %>
+    s.executables = <%= executables.inspect %>
+<% end %>
+	# TODO add any dependencies
+	# s.add_dependency("log4r", ">= 1.0.5")
+	# s.add_dependency("log4r")
+end
